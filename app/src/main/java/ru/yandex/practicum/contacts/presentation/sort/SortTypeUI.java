@@ -6,23 +6,9 @@ import ru.yandex.practicum.contacts.presentation.base.ContactsOrderTypeUi;
 
 public class SortTypeUI extends ContactsOrderTypeUi {
 
-    private final boolean isSelected;
-
-    public SortTypeUI(@NonNull String type, boolean isSelected) {
-        super(type);
-        this.isSelected = isSelected;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public boolean isSelected() {
-        return isSelected;
-    }
-
-    public String createLogMessage() {
-        return "Выбран тип сортировки: " + type;
+    public SortTypeUI (String type, boolean isSelected) {super (type, isSelected);}
+     public String createLogMessage() {
+        return "Выбран тип сортировки: " + getType();
     }
 
     @Override
@@ -36,16 +22,16 @@ public class SortTypeUI extends ContactsOrderTypeUi {
 
         SortTypeUI that = (SortTypeUI) o;
 
-        if (isSelected != that.isSelected) {
+        if (isSelected() != that.isSelected()) {
             return false;
         }
-        return type.equals(that.type);
+        return getType().equals(that.getType());
     }
 
     @Override
     public int hashCode() {
-        int result = type.hashCode();
-        result = 31 * result + (isSelected ? 1 : 0);
+        int result = getType().hashCode();
+        result = 31 * result + (isSelected() ? 1 : 0);
         return result;
     }
 }
