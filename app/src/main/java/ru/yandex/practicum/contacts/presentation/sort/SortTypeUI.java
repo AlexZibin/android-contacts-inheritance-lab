@@ -2,13 +2,14 @@ package ru.yandex.practicum.contacts.presentation.sort;
 
 import androidx.annotation.NonNull;
 
-public class SortTypeUI {
+import ru.yandex.practicum.contacts.presentation.base.ContactsOrderTypeUi;
 
-    private final String type;
+public class SortTypeUI extends ContactsOrderTypeUi {
+
     private final boolean isSelected;
 
     public SortTypeUI(@NonNull String type, boolean isSelected) {
-        this.type = type;
+        super(type);
         this.isSelected = isSelected;
     }
 
