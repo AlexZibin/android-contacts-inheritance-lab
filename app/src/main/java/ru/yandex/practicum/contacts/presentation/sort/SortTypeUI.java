@@ -6,8 +6,12 @@ import ru.yandex.practicum.contacts.presentation.base.ContactsOrderTypeUi;
 
 public class SortTypeUI extends ContactsOrderTypeUi {
 
-    public SortTypeUI (String type, boolean isSelected) {super (type, isSelected);}
-     public String createLogMessage() {
+    public SortTypeUI(@NonNull String type, boolean isSelected) {
+        super(type, isSelected);
+    }
+
+    @Override
+    public String createLogMessage() {
         return "Выбран тип сортировки: " + getType();
     }
 
@@ -35,3 +39,4 @@ public class SortTypeUI extends ContactsOrderTypeUi {
         return result;
     }
 }
+

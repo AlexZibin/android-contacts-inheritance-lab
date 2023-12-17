@@ -1,6 +1,6 @@
 package ru.yandex.practicum.contacts.presentation.base;
 
-public class ContactsOrderTypeUi {
+public abstract class ContactsOrderTypeUi {
     private final String type;
     private final boolean isSelected;
 
@@ -17,4 +17,5 @@ public class ContactsOrderTypeUi {
         return isSelected;
     }
 
+    public abstract String createLogMessage();
 }
